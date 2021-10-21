@@ -6,7 +6,7 @@ import "./index.css";
 
 const App = () => {
   const fromPerson = {
-    name: "John Done",
+    name: "John Doe",
     address: {
       street: "222 Harvard St.",
       zip: "MA 02139",
@@ -16,11 +16,11 @@ const App = () => {
   };
 
   const toPerson = {
-    name: "John Done",
+    name: "Jane Williams",
     address: {
-      street: "222 Harvard St.",
-      zip: "MA 02139",
-      city: "Boston",
+      street: "123 Columbia St.",
+      zip: "CA 94101",
+      city: "San Francisco",
       country: "USA",
     },
   };
@@ -50,6 +50,11 @@ const Envelope = ({ toPerson, fromPerson }) => {
   );
 };
 
+Envelope.propTypes = {
+  toPerson: PropTypes.object.isRequired,
+  fromPerson: PropTypes.object.isRequired,
+};
+
 const AddressLabel = ({ person }) => {
   const { street, zip, city, country } = person.address;
 
@@ -70,6 +75,18 @@ const AddressLabel = ({ person }) => {
       </div>
     </div>
   );
+};
+
+AddressLabel.propTypes = {
+  person: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    address: PropTypes.shape({
+      street: PropTypes.string.isRequired,
+      zip: PropTypes.string.isRequired,
+      city: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+    }).isRequired,
+  }),
 };
 
 const Stamp = () => {
