@@ -13,8 +13,8 @@ function Tweet({ tweet }) {
         <Message text={tweet.message} />
         <div className="buttons">
           <ReplyButton />
-          <RetweetButton />
-          <LikeButton />
+          <RetweetButton count={tweet.retweets} />
+          <LikeButton count={tweet.likes} />
           <MoreOptionsButton />
         </div>
       </div>
@@ -47,19 +47,54 @@ const Time = ({ time }) => {
 };
 
 const ReplyButton = () => {
-  return <i className="fa fa-reply replay-button" />;
+  return (
+    <span className="reply-button">
+      <i className="fa fa-reply" />
+    </span>
+  );
 };
 
-const RetweetButton = () => {
-  return <i className="fa fa-retweet retweet-button" />;
+const RetweetButton = ({ count }) => {
+  return (
+    <span className="retweet-button">
+      <i className="fa fa-retweet" />
+      <Count count={count} />
+    </span>
+  );
 };
 
-const LikeButton = () => {
-  return <i className="fa fa-heart like-button" />;
+// const LikeButton = ({ count }) => {
+//   return (
+//     <span className="like-button">
+//       <i className="fa fa-heart" />
+//       {count > 0 && <span className="like-count">{count}</span>}
+//     </span>
+//   );
+// };
+
+const LikeButton = ({ count }) => {
+  return (
+    <span className="like-button">
+      <i className="fa fa-heart" />
+      <span className="like-count">{count ? count : null}</span>
+    </span>
+  );
 };
 
 const MoreOptionsButton = () => {
-  return <i className="fa fa-ellipsis-h more-options-button" />;
+  return (
+    <span className="more-options-button">
+      <i className="fa fa-ellipsis-h" />
+    </span>
+  );
+};
+
+const Count = ({ count }) => {
+  if (count > 0) {
+    return <span className="retweet-count">{count}</span>;
+  } else {
+    return null;
+  }
 };
 
 const testTweet = {
@@ -70,7 +105,7 @@ const testTweet = {
     name: "Samer Sacic",
   },
   likes: 2,
-  retweets: 0,
+  retweets: 7,
   timestamp: "2021-10-21 12:55:00",
 };
 
