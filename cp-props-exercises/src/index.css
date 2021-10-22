@@ -68,3 +68,78 @@ body {
 .address-details ul li {
   margin: 5px 0;
 }
+
+/*
+  Credit Card
+*/
+
+.card-content {
+  width: 40rem;
+  margin: 60px auto;
+}
+
+.credit-card-wrapper {
+  width: 27rem;
+  margin: 0 auto;
+  border-radius: 12px;
+  background-color: #2563eb;
+  color: #fff;
+  padding: 30px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.credit-card-header {
+  margin-bottom: 60px;
+}
+
+.credit-card-header h1 {
+  margin: 0;
+  text-align: right;
+}
+
+.credit-card-number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.credit-card-number span {
+  display: inline-block;
+  font-size: 32px;
+  letter-spacing: 2px;
+}
+
+.credit-card-ccv span {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.credit-card-ex-date {
+  display: flex;
+  justify-content: center;
+}
+
+.ex-date-text span {
+  display: block;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.ex-date {
+  display: flex;
+  align-items: baseline;
+  margin-left: 5px;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.credit-card-footer {
+  margin-top: 10px;
+}
+
+.credit-card-holder {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
