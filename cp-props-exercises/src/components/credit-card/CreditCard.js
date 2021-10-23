@@ -5,21 +5,13 @@ import CreditCardNumber from "./CreditCardNumber";
 import CreditCardHolder from "./CreditCardHolder";
 
 const CreditCard = ({ cardInfo }) => {
-  const [creditCardNumber, setCreditCardNumber] = useState();
-
-  useEffect(() => {
-    const number = groupNumberInFourParts(cardInfo.cardNumber);
-    setCreditCardNumber(number);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
     <div className="credit-card-wrapper">
       <div className="credit-card-header">
         <CreditCardBankName name={cardInfo.bankName} />
       </div>
       <div className="credit-card-body">
-        <CreditCardNumber number={creditCardNumber} />
+        <CreditCardNumber number={cardInfo.cardNumber} />
         <div className="credit-card-ccv">
           <span>1234</span>
         </div>
@@ -37,9 +29,5 @@ const CreditCard = ({ cardInfo }) => {
     </div>
   );
 };
-
-function groupNumberInFourParts(number) {
-  return number.toString().match(/\d{1,4}/g);
-}
 
 export default CreditCard;
