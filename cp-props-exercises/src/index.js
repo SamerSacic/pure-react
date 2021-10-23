@@ -31,6 +31,7 @@ const App = () => {
     holderName: "Samer Sacic",
     cardNumber: 1234567887654321,
     cardExDate: "08/24",
+    cardCCV: 1234,
     bankName: "Big Bank, Inc.",
   };
 

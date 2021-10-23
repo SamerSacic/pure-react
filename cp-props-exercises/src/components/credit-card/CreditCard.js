@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-
 import CreditCardBankName from "./CreditCardBankName";
 import CreditCardNumber from "./CreditCardNumber";
 import CreditCardHolder from "./CreditCardHolder";
+import CreditCardCCV from "./CreditCardCCV";
 
 const CreditCard = ({ cardInfo }) => {
   return (
@@ -12,9 +11,7 @@ const CreditCard = ({ cardInfo }) => {
       </div>
       <div className="credit-card-body">
         <CreditCardNumber number={cardInfo.cardNumber} />
-        <div className="credit-card-ccv">
-          <span>1234</span>
-        </div>
+        <CreditCardCCV number={cardInfo.cardCCV} />
         <div className="credit-card-ex-date">
           <div className="ex-date-text">
             <span>Valid</span>
