@@ -22,16 +22,14 @@ class Reddit extends React.Component {
   }
 
   render() {
-    const { posts } = this.state;
+    const { posts, error, isLoading } = this.state;
 
     return (
       <div>
-        {this.state.error !== null
-          ? `Something went wrong: ${this.state.error}`
-          : null}
+        {error !== null ? `Something went wrong: ${error}` : null}
         <h1>{`/r/${this.props.subreddit}`}</h1>
         <ul>
-          {!this.state.isLoading ? "Loading...." : null}
+          {!isLoading ? "Loading...." : null}
           {posts.map((post) => (
             <li key={post.id}>{post.title}</li>
           ))}
