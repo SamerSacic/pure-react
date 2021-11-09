@@ -1,4 +1,4 @@
-const IncDecButton = ({ min, max, label, value, step = 1, onAction }) => {
+const Volume = ({ min, max, label, value, step = 1, onAction }) => {
   return (
     <div>
       <div className="d-flex align-items-baseline">
@@ -32,4 +32,4 @@ const IncDecButton = ({ min, max, label, value, step = 1, onAction }) => {
   );
 };
 
-export default IncDecButton;
+export default Volume;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import IncDecButton from "./IncDecButton";
+import Volume from "./Volume";
 
 const AudioControlsV2 = () => {
   const [controls, setControls] = useState({
@@ -9,28 +9,28 @@ const AudioControlsV2 = () => {
     bass: 12,
   });
 
-  const incDecVolume = (value) => {
+  const handleVolume = (value) => {
     setControls({
       ...controls,
       volume: value,
     });
   };
 
-  const incDecTreble = (value) => {
+  const handleTrebleVolume = (value) => {
     setControls({
       ...controls,
       treble: value,
     });
   };
 
-  const incDecMid = (value) => {
+  const handleMidVolume = (value) => {
     setControls({
       ...controls,
       mid: value,
     });
   };
 
-  const incDecBass = (value) => {
+  const handleBassVolume = (value) => {
     setControls({
       ...controls,
       bass: value,
@@ -40,18 +40,14 @@ const AudioControlsV2 = () => {
   return (
     <div>
       <h4>Audio Controls V2</h4>
-      <IncDecButton
-        onAction={incDecVolume}
-        value={controls.volume}
-        label="Volume"
-      />
-      <IncDecButton
-        onAction={incDecTreble}
+      <Volume onAction={handleVolume} value={controls.volume} label="Volume" />
+      <Volume
+        onAction={handleTrebleVolume}
         value={controls.treble}
         label="Treble"
       />
-      <IncDecButton onAction={incDecMid} value={controls.mid} label="Mid" />
-      <IncDecButton onAction={incDecBass} value={controls.bass} label="Bass" />
+      <Volume onAction={handleMidVolume} value={controls.mid} label="Mid" />
+      <Volume onAction={handleBassVolume} value={controls.bass} label="Bass" />
     </div>
   );
 };
